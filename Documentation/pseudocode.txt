@@ -1,0 +1,55 @@
+Function Server
+
+	If Server Start Button Pressed
+		ListenForConnections()
+		Change screen message to "Listening"
+	End if
+
+End Function
+
+Function ListenForConnections()
+
+	Create Server Listening Socket
+	While server is running
+		
+		Try to accept a new connection
+		If a connection was accepted
+			start ReadingServerThread()
+		end If
+		
+	End While
+	
+End Function
+
+Function ReadingServerThread()
+
+	While Connected to a client
+		try and read data from the client
+		If data was read
+			Write location data to the screen
+		End If
+	End While
+
+End Function
+
+Function Client
+	
+	Get IP and port
+	Get Location data
+	Get Timestamp
+	Get Device name
+	Get IP address
+	
+	Start SendingClientThread()
+
+End Function
+
+Function SendingClientThread()
+	Store DeviceIP, Latitude, Longitude, TimeStamp, and devicename in data string
+	
+	Create Socket to server
+	If connection was established and send button was pressed
+		Send data to server
+	End If
+	
+End Function
